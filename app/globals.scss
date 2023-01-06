@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "@sweetalert2/theme-dark/dark.scss";
+body {
+  background-color: #151515;
+  font-family: "Jost", sans-serif;
+  color: white;
+  .app-container {
+    @apply relative h-screen lg:overflow-hidden lg:flex  bg-[#151515]  z-50  max-sm:flex max-sm:flex-col max-sm:justify-center
+        after:absolute after:bg-[#3452ff] after:p-7 after:h-full  after:w-[30%]  after:z-10
+        before:absolute before:bg-[#070707] before:top-0 before:right-0 before:w-[30%] before:h-full before:z-10;
+
+    &::after {
+      clip-path: polygon(100% 0, 80% 50%, 100% 100%, 0 100%, 0 0);
+    }
+
+    &::before {
+      clip-path: polygon(20% 0, 100% 0, 100% 50%, 100% 100%, 20% 100%, 0 50%);
+    }
+  }
+}
+
+.app-content {
+  @apply relative m-auto  h-4/5 w-11/12 z-50 lg:flex gap-4;
+  .content {
+    @apply container  bg-[#191919] shadow-lg   border border-[#151515] rounded  p-4 grid items-center justify-center mx-auto;
+    .title {
+      @apply relative text-white font-bold text-4xl my-4 uppercase  text-center;
+    }
+    .game {
+      .title {
+        @apply relative text-white font-semibold text-xl my-4 uppercase  text-center;
+      }
+    }
+  }
+}
